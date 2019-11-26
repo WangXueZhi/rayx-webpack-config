@@ -85,13 +85,14 @@ const getPublicPageFullname = (publicPagePath, pageSuffix, entryPages) => { // é
     return pageObj;
 };
 
-const get = () => {
+const get = (options) => {
+    init(options)
     return settings;
 }
 
-const set = (options) => {
+const init = (options) => {
     if(!options.assetsPath){
-        settings["assetsPath"] = path.join(process.cwd(), `./dist${options.version ? "/"+options.version : ""}/assets`)
+        settings["assetsPath"] = path.join(process.cwd(), `./dist/${options.version}/assets`)
     }
     for (let key in options) {
         if (options[key] instanceof Object && !(options[key] instanceof Array)) {
@@ -104,7 +105,6 @@ const set = (options) => {
 
 module.exports = {
     get,
-    set,
     getDefinePluginParam,
     getPublicPageFullname
 };

@@ -4,14 +4,8 @@ let prod = require("./cfg/prod.js");
 let settings = require("./cfg/settings.js");
 
 let webpackCfg = (function () {
-    let setOption = function (option) {
-        settings.set(option);
-    };
-
     let getConfig = function (option) {
-        setOption(option);
-
-        let options = settings.get();
+        let options = settings.get(option);
         // webpack基础配置
         base.init(options);
         let baseConfig = base.getConfig();
