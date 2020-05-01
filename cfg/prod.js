@@ -2,10 +2,13 @@ let path = require('path');
 let webpack = require('webpack');
 let settings = require('./settings.js');
 
+// 环境
+// let env = process.env.GULP_ENV == "prod" ? "weidai.com.cn" : "wdai.com";
+
 // 项目页面路径
 let publicPagePath = './';
 // 项目资源路径
-let publicAssetPath = "./";
+let publicAssetPath = null;
 // 后端接口路径
 let publicRpcPath = null;
 // 页面列表

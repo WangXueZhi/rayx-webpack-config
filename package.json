@@ -1,8 +1,8 @@
 {
-  "name": "rayx-webpack-config",
+  "name": "webpack-config",
   "description": "webpack 配置",
-  "version": "1.0.0",
-  "author": "WangXueZhi",
+  "version": "2.0.0",
+  "author": "wang <wangxuezhi@wdai.com>",
   "main": "./index.js",
   "dependencies": {},
   "devDependencies": {

@@ -1,7 +1,7 @@
 let path = require('path');
 
 var settings = {
-    version: "",
+    version: "1.0.0",
     // 环境变量：dev,test,prod。默认test
     env: "test",
     // src路径，默认从当前执行node命令时候的文件夹地址里找
@@ -15,7 +15,7 @@ var settings = {
     // 构建路径，默认从项目根目录里找
     distPath: path.join(process.cwd(), './dist'),
     // 构建资源路径，默认从distPath目录里找
-    assetsPath: path.join(process.cwd(), `./dist/assets`),
+    assetsPath: path.join(process.cwd(), `./dist/1.0.0/assets`),
     // 后端接口路径
     rpcPath: {},
     // 需要提取的公共依赖
@@ -85,12 +85,11 @@ const getPublicPageFullname = (publicPagePath, pageSuffix, entryPages) => { // �
     return pageObj;
 };
 
-const get = (options) => {
-    init(options)
+const get = () => {
     return settings;
 }
 
-const init = (options) => {
+const set = (options) => {
     if(!options.assetsPath){
         settings["assetsPath"] = path.join(process.cwd(), `./dist/${options.version}/assets`)
     }
@@ -105,6 +104,7 @@ const init = (options) => {
 
 module.exports = {
     get,
+    set,
     getDefinePluginParam,
     getPublicPageFullname
 };

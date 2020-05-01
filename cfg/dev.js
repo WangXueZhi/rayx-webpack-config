@@ -15,7 +15,7 @@ let pageListArray = null;
 
 let devServerProxy = {
   '/proxy/': {
-    target: '代理访问url',
+    target: 'https://www.wdai.com/',
     pathRewrite: {
       '^/proxy/': '/'
     },
